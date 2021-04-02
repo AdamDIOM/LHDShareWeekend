@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MELONsquad soundboard</title>
+    <!-- <link rel="shortcut icon" type="image/png" href="./favicon.png"/> -->
+  </head>
+
+  <body>
+
+    <style>
+      /* CSS goes here! */
+    </style>
+
+    <!-- Audio elements go here! -->
+		
+
+    <h1>MELONsquad SOUNDBOARD</h1>
+
+    <!-- Create the soundboard buttons -->
+
+    <script>
+      // Create the playing boolean list
+
+			sounds = ["asmr", "pizza", "coffee"]
+			links = [
+				"https://github.com/AdamDIOM/MELONsquad/raw/main/Assets/Music/Will%20ASMR.mp3",
+				"https://github.com/AdamDIOM/MELONsquad/raw/main/Assets/Music/Pizza%20Sounds.mp3",
+				"https://github.com/AdamDIOM/MELONsquad/raw/main/Assets/Music/Coffee%20Sounds.mp3"
+				]
+
+			for(sound in sounds){
+        console.log(sound);
+				/*button = document.createElement("button");
+        button.id = sounds[sound] + ' button';
+        button.innerHTML = sounds[sound];
+        button.addEventListener("click", toggleAudio('', sound));
+        document.body.appendChild(button);*/
+
+        document.body.innerHTML += '<button onclick="toggleAudio(\'\',' + sound +')">' + sounds[sound] +'</button>'
+        
+        audio = document.createElement("audio");
+        audio.id = sounds[sound]
+
+        audio.innerHTML = '<source src="' + links[sound] + '">';
+
+        document.body.appendChild(audio);
+			}
+
+      function toggleAudio(sound, number) {
+        console.log("Audio toggled")
+        console.log(number);
+				var audio = document.getElementById(sounds[number]);
+				audio.play();
+      }
+    </script>
+
+  </body>
+</html>
