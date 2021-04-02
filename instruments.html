@@ -31,12 +31,6 @@
 				]
 
 			for(sound in sounds){
-        console.log(sound);
-				/*button = document.createElement("button");
-        button.id = sounds[sound] + ' button';
-        button.innerHTML = sounds[sound];
-        button.addEventListener("click", toggleAudio('', sound));
-        document.body.appendChild(button);*/
 
         document.body.innerHTML += '<button onclick="toggleAudio(\'\',' + sound +')">' + sounds[sound] +'</button>'
         
@@ -50,7 +44,6 @@
 
       function toggleAudio(sound, number) {
         console.log("Audio toggled")
-        console.log(number);
 				var audio = document.getElementById(sounds[number]);
 				audio.play();
       }
